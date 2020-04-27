@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Jonh Doe",
+      "email": "jonhdoe@gmail.com"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "text": "task 1",
+      "done": false
+    }
+  ]
+}
