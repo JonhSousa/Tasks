@@ -1,0 +1,16 @@
+.header-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #70f;
+  color: #fff;
+}
+
+.header-toolbar a i {
+  vertical-align: middle;
+  font-size: 2.0rem;
+}
+
+.header-toolbar a {
+  vertical-align: middle;
+  line-height: 68px;
+}

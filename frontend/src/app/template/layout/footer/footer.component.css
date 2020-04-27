@@ -1,0 +1,15 @@
+.footer-toolbar {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-toolbar p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.footer-toolbar p span {
+  font-weight: bold;
+}
