@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { StartPageComponent } from './components/pages/start-page/start-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { TasksListComponent } from './components/pages/tasks-list/tasks-list.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     StartPageComponent,
+    TasksListComponent,
   ],
   imports: [
     BrowserModule,
