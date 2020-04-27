@@ -1,16 +1,23 @@
-.header-toolbar {
+.mat-header-toolbar {
+  position: relative;
+  z-index: 2;
+}
+
+
+.mat-header-toolbar {
+  position: relative;
   display: flex;
   align-items: center;
-  background-color: #70f;
   color: #fff;
 }
 
-.header-toolbar a i {
+.mat-header-toolbar a {
   vertical-align: middle;
-  font-size: 2.0rem;
+  line-height: 70px;
 }
 
-.header-toolbar a {
+.mat-header-toolbar a i {
   vertical-align: middle;
-  line-height: 68px;
+  font-size: 2.0rem;
+  margin-right: 10px;
 }

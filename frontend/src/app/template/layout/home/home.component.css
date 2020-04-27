@@ -1,0 +1,17 @@
+.sidenav-container {
+  color: #fff;
+}
+
+.left-sidenav {
+  display: flex;
+  width: 200px;
+  background-color: #007;
+}
+
+.left-sidenav a {
+  color: #fff;
+}
+
+.left-sidenav a i {
+  margin-right: 10px;
+}
