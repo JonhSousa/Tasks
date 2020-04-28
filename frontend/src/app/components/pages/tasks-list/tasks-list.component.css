@@ -1,0 +1,10 @@
+.task-card {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.task-cards-container {
+  margin: 20px;
+  color: #000;
+  max-height: 75vh;
+}

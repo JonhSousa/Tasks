@@ -14,6 +14,7 @@ import { StartPageComponent } from './components/pages/start-page/start-page.com
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { TasksListComponent } from './components/pages/tasks-list/tasks-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TasksListComponent } from './components/pages/tasks-list/tasks-list.com
     MatListModule,
     MatCardModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
