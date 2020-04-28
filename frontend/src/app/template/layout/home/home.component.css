@@ -16,3 +16,52 @@
 .left-sidenav a i {
   margin-right: 10px;
 }
+
+.app-title {
+  height: 50px;
+  width: 100%;
+}
+
+.app-title a {
+  font-size: 2.0rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  line-height: 30px;
+}
+
+.app-title a i {
+  font-size: 2.0rem;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+  .left-sidenav {
+    width: 20vw;
+  }
+
+  .app-title a span,
+  .mat-nav-list a span {
+    display: none;
+  }
+
+  .mat-nav-list a {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .app-title a i {
+    font-size: 2.5rem;
+  }
+
+  .mat-nav-list a i {
+    font-size: 2.0rem;
+  }
+
+  .left-sidenav a i {
+    margin-right: 0px;
+  }
+
+}
