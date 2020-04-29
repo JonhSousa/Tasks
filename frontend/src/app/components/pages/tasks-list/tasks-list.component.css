@@ -1,7 +1,7 @@
 .task-card {
-  height: 25vh;
-  width: 20vw;
-  margin: 15px 0px 15px 0px;
+  height: 5vh;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
 }
 
 .task-cards-container {
@@ -10,7 +10,7 @@
   max-height: 75vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -33,19 +33,16 @@ h1 {
   margin: 15px;
   height: 35px;
 }
-@media screen and (max-width: 1024px) {
-  .task-card {
-    height: 25vh;
-    width: 25vw;
-  }
+
+.task-card button {
+  margin-left: auto;
 }
-@media screen and (max-width: 768px) {
-  .task-card {
-    height: 25vh;
-    width: 75vw;
-    height: 20vh;
-  }
-  .task-cards-container {
-    max-height: 70vh;
-  }
+
+.markedDone {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.done-check {
+  margin-right: 10px;
 }
