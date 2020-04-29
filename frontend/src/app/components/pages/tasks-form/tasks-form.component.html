@@ -1,0 +1,22 @@
+<mat-card class="task-form-container mat-elevation-z2">
+
+  <mat-card-title>New Task</mat-card-title>
+
+  <div class="task-form-container">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput name="title" placeholder="New task" [(ngModel)]="task.title">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Text</mat-label>
+      <textarea matInput placeholder="Task text" name="text" rows="10" [(ngModel)]="task.text"></textarea>
+    </mat-form-field>
+    <mat-checkbox name="done" [(ngModel)]="task.done">Done</mat-checkbox>
+
+  </div>
+  <div class="task-form-buttons-container">
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="doAddTask()">Save</button>
+  </div>
+
+</mat-card>

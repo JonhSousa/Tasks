@@ -5,7 +5,7 @@
 }
 
 .task-cards-container {
-  margin: 30px;
+  margin: 12vh 30px 30px 30px;
   color: #000;
   max-height: 75vh;
   display: flex;
@@ -19,20 +19,32 @@ h1 {
   color: #000;
 }
 
+.task-list-header {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.task-list-header button {
+  margin: 15px;
+  height: 35px;
+}
 @media screen and (max-width: 1024px) {
   .task-card {
     height: 25vh;
     width: 25vw;
   }
 }
-
 @media screen and (max-width: 768px) {
   .task-card {
     height: 25vh;
     width: 75vw;
     height: 20vh;
   }
-
   .task-cards-container {
     max-height: 70vh;
   }

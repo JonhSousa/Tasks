@@ -1,10 +1,13 @@
 {
-  "users": [{
-    "id": 1,
-    "name": "Jonh Doe",
-    "email": "jonhdoe@gmail.com"
-  }],
-  "tasks": [{
+  "users": [
+    {
+      "id": 1,
+      "name": "Jonh Doe",
+      "email": "jonhdoe@gmail.com"
+    }
+  ],
+  "tasks": [
+    {
       "id": 1,
       "title": "task1",
       "text": "task 1",
@@ -15,41 +18,24 @@
       "title": "task1",
       "text": "task 1",
       "done": false
-    }, {
+    },
+    {
       "id": 3,
-      "title": "task1",
-      "text": "task 1",
+      "title": "task2",
+      "text": "task 2",
       "done": false
-    }, {
-      "id": 1,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    }, {
-      "id": 2,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    }, {
-      "id": 3,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    }, {
-      "id": 1,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    }, {
-      "id": 2,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    }, {
-      "id": 3,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
+    },
+    {
+      "title": "nova task",
+      "text": "essa é uma nova task de teste",
+      "done": true,
+      "id": 4
+    },
+    {
+      "title": "Nova task",
+      "text": "definindo uma  nova  task",
+      "done": false,
+      "id": 5
     }
   ]
 }

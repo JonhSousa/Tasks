@@ -1,3 +1,4 @@
+import { TasksFormComponent } from './components/pages/tasks-form/tasks-form.component';
 import { TasksListComponent } from './components/pages/tasks-list/tasks-list.component';
 import { StartPageComponent } from './components/pages/start-page/start-page.component';
 import { HomeComponent } from './template/layout/home/home.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'tarefas',
     component: TasksListComponent,
+  },
+  {
+    path: 'nova-tarefa',
+    component: TasksFormComponent,
   },
 ];
 

@@ -1,0 +1,15 @@
+.task-form-container {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.task-form-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.task-form-buttons-container button {
+  margin-right: 10px;
+}

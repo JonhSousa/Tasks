@@ -15,6 +15,13 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { TasksListComponent } from './components/pages/tasks-list/tasks-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TasksFormComponent } from './components/pages/tasks-form/tasks-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -24,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     StartPageComponent,
     TasksListComponent,
+    TasksFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +43,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     FormsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
