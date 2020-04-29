@@ -29,4 +29,9 @@ export class TasksService {
     const customUrl = `${this.baseUrl}/${task.id}`;
     return this.http.put<Task>(customUrl, task);
   }
+
+  deleteTask(task: Task): Observable<Task> {
+    const customUrl = `${this.baseUrl}/${task.id}`;
+    return this.http.delete<Task>(customUrl);
+  }
 }

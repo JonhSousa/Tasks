@@ -59,6 +59,7 @@ export class TasksFormComponent implements OnInit {
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top',
+        panelClass: ['white-snackbar'],
       });
       this.router.navigate(['/tarefas']);
     });
@@ -70,6 +71,7 @@ export class TasksFormComponent implements OnInit {
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top',
+        panelClass: ['white-snackbar'],
       });
       this.router.navigate(['/tarefas']);
     });

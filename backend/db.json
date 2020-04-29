@@ -8,76 +8,10 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    },
-    {
-      "id": 2,
-      "title": "task1",
-      "text": "task 1",
-      "done": false
-    },
-    {
-      "id": 3,
-      "title": "task2",
-      "text": "task 2",
-      "done": false
-    },
-    {
-      "title": "nova task",
-      "text": "essa é uma nova task de teste",
-      "done": true,
-      "id": 4
-    },
-    {
-      "title": "Nova task",
-      "text": "definindo uma  nova  task",
+      "title": "testing new task",
+      "text": "asdasdasdadasdas",
       "done": false,
-      "id": 5
-    },
-    {
-      "title": "Nova atividade",
-      "text": "testando",
-      "done": true,
-      "id": 6
-    },
-    {
-      "title": "nova  task false",
-      "text": "asdsadasdasdas",
-      "done": false,
-      "id": 7
-    },
-    {
-      "title": "Nova task true",
-      "text": "adsadadasda  da daa",
-      "done": false,
-      "id": 8
-    },
-    {
-      "title": "adasdas",
-      "text": "assdadadad",
-      "done": true,
-      "id": 9
-    },
-    {
-      "title": "adadadasdas",
-      "text": "",
-      "done": true,
-      "id": 10
-    },
-    {
-      "title": "jkljlkjljk2",
-      "text": "lkjljklkjljljl",
-      "done": true,
-      "id": 11
-    },
-    {
-      "title": "nova task de teste pra ver se ta dando certo mesmo2222",
-      "text": "asdsadsadasdas",
-      "done": false,
-      "id": 12
+      "id": 1
     }
   ]
 }

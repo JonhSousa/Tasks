@@ -22,7 +22,6 @@ export class TasksListComponent implements OnInit {
   ngOnInit(): void {
     this.tasksService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
-      console.log('tasks:', this.tasks);
     });
   }
 
@@ -43,6 +42,23 @@ export class TasksListComponent implements OnInit {
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top',
+        panelClass: ['white-snackbar'],
+      });
+    });
+  }
+
+  doDeleteTask(task: Task): void {
+    this.changeSelectedTask(task);
+    this.tasksService.deleteTask(task).subscribe(() => {
+      this.snackBar.open('Task deleted', 'X', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: ['white-snackbar'],
+      });
+      this.router.navigate(['/tarefas']);
+      this.tasksService.getTasks().subscribe((tasks) => {
+        this.tasks = tasks;
       });
     });
   }
