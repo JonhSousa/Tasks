@@ -7,13 +7,31 @@
   <div class="task-cards-container" *ngIf="tasks">
 
     <mat-card class="task-card mat-elevation-z4" *ngFor="let task of tasks.reverse()">
-      <mat-card-title>
-        <mat-checkbox class="done-check" [checked]="task.done" [(ngModel)]="task.done"></mat-checkbox>
-        <span [class.markedDone]="task.done==true">{{task.title}}</span>
-      </mat-card-title>
+      <mat-card-header color="primary">
+        <mat-card-title>
+          <span [class.markedDone]="task.done==true">{{task.title}}</span>
+        </mat-card-title>
+      </mat-card-header>
       <mat-card-subtitle>{{task.text}}</mat-card-subtitle>
+      <mat-card-actions>
+        <div>
+          <button mat-icon-button color="primary" aria-label="Set Done state" (click)="doCheck(task)">
+            <mat-icon>
+              check_circle
+            </mat-icon>
+          </button>
+          <button mat-icon-button color="accent" aria-label="Edit Task" routerLink="/tarefas/{{task.id}}">
+            <mat-icon>
+              edit
+            </mat-icon>
+          </button>
+          <button mat-icon-button color="warn" aria-label="Delete Task">
+            <mat-icon>
+              delete
+            </mat-icon>
+          </button>
+        </div>
+      </mat-card-actions>
     </mat-card>
-
-
 
   </div>

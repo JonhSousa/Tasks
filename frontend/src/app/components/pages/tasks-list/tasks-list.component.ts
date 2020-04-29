@@ -1,6 +1,8 @@
 import { TasksService } from './../../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/tasks.model';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-tasks-list',
@@ -9,13 +11,39 @@ import { Task } from 'src/app/tasks.model';
 })
 export class TasksListComponent implements OnInit {
   tasks: Task[];
+  task: Task;
 
-  constructor(private tasksService: TasksService) {}
+  constructor(
+    private tasksService: TasksService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.tasksService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
       console.log('tasks:', this.tasks);
+    });
+  }
+
+  changeSelectedTask(task: Task): void {
+    this.task = task;
+    console.log('task:', task);
+  }
+
+  doCheck(task: Task): void {
+    task.done = !task.done;
+    this.changeSelectedTask(task);
+    this.doEditTask();
+  }
+
+  doEditTask(): void {
+    this.tasksService.editTask(this.task).subscribe(() => {
+      this.snackBar.open('Task edited', 'X', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+      });
     });
   }
 }

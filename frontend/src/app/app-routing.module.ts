@@ -15,6 +15,10 @@ const routes: Routes = [
     component: TasksListComponent,
   },
   {
+    path: 'tarefas/:id',
+    component: TasksFormComponent,
+  },
+  {
     path: 'nova-tarefa',
     component: TasksFormComponent,
   },

@@ -1,5 +1,4 @@
 .task-card {
-  height: 5vh;
   width: 100%;
   margin: 10px 0px 10px 0px;
 }
@@ -45,4 +44,9 @@ h1 {
 
 .done-check {
   margin-right: 10px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
 }
