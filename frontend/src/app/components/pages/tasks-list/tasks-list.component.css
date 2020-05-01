@@ -23,14 +23,14 @@ h1 {
   align-items: center;
   height: 10vh;
   min-height: 85px;
-  width: 100%;
+  width: 75vw;
   position: fixed;
   z-index: 2;
   background-color: #fff;
 }
 
 .task-list-header button {
-  margin: 15px;
+  margin: 15px 20px 15px 15px;
   height: 35px;
 }
 
@@ -62,4 +62,26 @@ mat-card-subtitle {
 mat-card-actions {
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+
+  .task-cards-container {
+    margin: 12vh 10px 20px 10px;
+  }
+
+  .task-list-header h1 {
+    font-weight: 500;
+    margin: 15px;
+  }
+
+  .task-list-header button {
+    margin: 15px 10px 15px 15px;
+    height: 35px;
+  }
+
+  .task-list-header {
+    width: 80vw;
+    justify-content: space-between;
+  }
 }

@@ -1,4 +1,4 @@
-<mat-card class="task-form-container mat-elevation-z2">
+<mat-card class="task-form-container mat-elevation-z0">
 
   <mat-card-title>New Task</mat-card-title>
 
@@ -11,7 +11,7 @@
       <mat-label>Text</mat-label>
       <textarea matInput placeholder="Task text" name="text" rows="10" [(ngModel)]="task.text"></textarea>
     </mat-form-field>
-    <mat-checkbox name="done" [(ngModel)]="task.done"> Check this if the task is already done</mat-checkbox>
+    <mat-checkbox name="done" [(ngModel)]="task.done"> The Task is done?</mat-checkbox>
 
   </div>
   <div class="task-form-buttons-container">

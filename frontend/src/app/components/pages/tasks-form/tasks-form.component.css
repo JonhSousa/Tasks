@@ -8,8 +8,22 @@
 .task-form-buttons-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  height: 50vh;
 }
 
 .task-form-buttons-container button {
   margin-right: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .task-form-container {
+    margin: 15px 2px 5px 2px;
+  }
 }

@@ -57,6 +57,10 @@
   width: 200px;
 }
 
+.user-informations button {
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .left-sidenav {
     width: 20vw;
@@ -86,8 +90,8 @@
   }
 
   .user-informations .user-avatar {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 3px solid #fff;
   }
@@ -110,7 +114,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 70px;
+    width: 20vw;
   }
 
   .user-informations div {

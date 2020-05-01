@@ -14,9 +14,9 @@
     <div class="user-informations" *ngIf="auth.user$ | async as user">
       <img class="user-avatar" [src]="user.photoURL">
       <div>
-        <p>{{ user.displayName }}</p>
-        <!--       <p>UID: {{ user.uid }}</p> -->
-        <button mat-raised-button (click)="auth.signOut()">Log Out</button>
+        <<!-- p>{{ user.displayName }}</p> -->
+          <!--       <p>UID: {{ user.uid }}</p> -->
+          <button mat-raised-button (click)="auth.signOut()">Log Out</button>
       </div>
     </div>
   </mat-sidenav>
