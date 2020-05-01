@@ -6,7 +6,7 @@
 .left-sidenav {
   display: flex;
   width: 200px;
-  background-color: #007;
+  background-color: #0d47a1;
 }
 
 .left-sidenav a {
@@ -20,6 +20,7 @@
 .app-title {
   height: 50px;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .app-title a {
@@ -31,8 +32,8 @@
   line-height: 30px;
 }
 
-.app-title a i {
-  font-size: 2.0rem;
+.app-title a img {
+  width: 100%;
   vertical-align: middle;
 }
 
@@ -61,7 +62,24 @@
   margin-top: 20px;
 }
 
+.app-title .mobile-logo {
+  display: none;
+}
+
+.app-title .desktop-logo {
+  display: block;
+}
+
 @media screen and (max-width: 768px) {
+
+  .app-title .desktop-logo {
+    display: none;
+  }
+
+  .app-title .mobile-logo {
+    display: block;
+  }
+
   .left-sidenav {
     width: 20vw;
   }
@@ -77,6 +95,10 @@
     justify-content: center;
   }
 
+  .app-title {
+    margin-bottom: 0px;
+  }
+
   .app-title a i {
     font-size: 2.5rem;
   }
@@ -90,8 +112,8 @@
   }
 
   .user-informations .user-avatar {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 3px solid #fff;
   }
@@ -109,7 +131,7 @@
 
   .user-informations {
     position: fixed;
-    bottom: 20px;
+    bottom: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;

@@ -2,8 +2,11 @@
   <mat-sidenav class="left-sidenav" opened mode="side" fixedInViewport="true">
     <div>
       <div class="app-title">
-        <a routerLink="/">
-          <i class="material-icons">assignment_turned_in</i><span>Tasks</span>
+        <a class="desktop-logo" routerLink="/">
+          <img src="../../../../assets/images/4.png" alt="Tasks logo">
+        </a>
+        <a class="mobile-logo" routerLink="/">
+          <img src="../../../../assets/images/3.png" alt="Tasks logo">
         </a>
       </div>
       <mat-nav-list>
@@ -14,9 +17,9 @@
     <div class="user-informations" *ngIf="auth.user$ | async as user">
       <img class="user-avatar" [src]="user.photoURL">
       <div>
-        <<!-- p>{{ user.displayName }}</p> -->
-          <!--       <p>UID: {{ user.uid }}</p> -->
-          <button mat-raised-button (click)="auth.signOut()">Log Out</button>
+        <!-- p>{{ user.displayName }}</p> -->
+        <!--       <p>UID: {{ user.uid }}</p> -->
+        <button mat-raised-button (click)="auth.signOut()">Log Out</button>
       </div>
     </div>
   </mat-sidenav>
