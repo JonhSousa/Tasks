@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TasksFormComponent } from './components/pages/tasks-form/tasks-form.component';
 import { TasksListComponent } from './components/pages/tasks-list/tasks-list.component';
 import { StartPageComponent } from './components/pages/start-page/start-page.component';

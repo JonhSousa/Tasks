@@ -22,6 +22,22 @@ import { TasksFormComponent } from './components/pages/tasks-form/tasks-form.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+const config = {
+  apiKey: 'AIzaSyCAFI2DVBbxvKmL1QizhzrKAuOzuKuFkKs',
+  authDomain: 'tasks-1951e.firebaseapp.com',
+  databaseURL: 'https://tasks-1951e.firebaseio.com',
+  projectId: 'tasks-1951e',
+  storageBucket: 'tasks-1951e.appspot.com',
+  messagingSenderId: '169648077125',
+  appId: '1:169648077125:web:96de555629ee385e41662c',
+  measurementId: 'G-E32BNWTJWD',
+};
 
 @NgModule({
   declarations: [
@@ -32,6 +48,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     StartPageComponent,
     TasksListComponent,
     TasksFormComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +66,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,43 @@
+.user-profile-all-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d47a1;
+}
+
+.user-profile-all-container mat-card {
+  width: 30vw;
+  height: 40vh;
+  min-width: 550px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-profile-card h3 {
+  font-size: 7rem;
+  margin: 50px 0px 15px 0px;
+}
+
+.user-profile-card button {
+  height: 50px;
+  width: 150px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .user-profile-card h3 {
+    font-size: 5rem;
+    margin: 50px 0px 15px 0px;
+  }
+
+  .user-profile-all-container mat-card {
+    height: 43vh;
+    min-width: 300px;
+    min-height: 300px;
+  }
+}
