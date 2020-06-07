@@ -1,5 +1,7 @@
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from './../../../auth.service';
 import { TasksService } from './../../../services/tasks.service';
-import { Task } from 'src/app/tasks.model';
+import { Task } from 'src/app/task.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -14,6 +16,7 @@ export class TasksFormComponent implements OnInit {
     title: '',
     text: '',
     done: false,
+    email: '',
   };
 
   snackObject = {};
@@ -22,13 +25,15 @@ export class TasksFormComponent implements OnInit {
     private taskService: TasksService,
     private router: Router,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public auth: AuthService,
+    private firestore: AngularFirestore
   ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.doGetById(parseInt(id));
+      this.doGetById(id);
     }
   }
 
@@ -54,19 +59,23 @@ export class TasksFormComponent implements OnInit {
   }
 
   doAddTask(): void {
-    this.taskService.addTask(this.task).subscribe(() => {
-      this.snackBar.open('New task added', 'X', {
-        duration: 3000,
-        horizontalPosition: 'center',
-        verticalPosition: 'top',
-        panelClass: ['white-snackbar'],
+    this.auth.user$.subscribe((user) => {
+      this.task.email = user.email;
+      this.task.id = this.firestore.createId();
+      this.taskService.addTask(this.task).then(() => {
+        this.snackBar.open('New task added', 'X', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+          panelClass: ['white-snackbar'],
+        });
+        this.router.navigate(['/tarefas']);
       });
-      this.router.navigate(['/tarefas']);
     });
   }
 
   doEditTask(): void {
-    this.taskService.editTask(this.task).subscribe(() => {
+    this.taskService.editTask(this.task).then(() => {
       this.snackBar.open('Task edited', 'X', {
         duration: 3000,
         horizontalPosition: 'center',
@@ -77,8 +86,16 @@ export class TasksFormComponent implements OnInit {
     });
   }
 
-  doGetById(id: number): void {
-    this.taskService.getTaskById(id).subscribe((task) => (this.task = task));
+  doGetById(id: string): void {
+    this.taskService.getTaskById(id).subscribe(
+      (data) =>
+        (this.task = data.map((e) => {
+          return {
+            id: e.payload.doc.id,
+            ...(e.payload.doc.data() as {}),
+          } as Task;
+        })[0])
+    );
   }
 
   cancel() {

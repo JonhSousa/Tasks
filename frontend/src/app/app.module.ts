@@ -23,12 +23,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-const config = {
+var config = {
   apiKey: 'AIzaSyCAFI2DVBbxvKmL1QizhzrKAuOzuKuFkKs',
   authDomain: 'tasks-1951e.firebaseapp.com',
   databaseURL: 'https://tasks-1951e.firebaseio.com',
@@ -69,9 +71,10 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
+    AngularFireStorageModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,6 @@
 import { TasksService } from './../../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
-import { Task } from 'src/app/tasks.model';
+import { Task } from 'src/app/task.model';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -20,8 +20,13 @@ export class TasksListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.tasksService.getTasks().subscribe((tasks) => {
-      this.tasks = tasks;
+    this.tasksService.getTasks().subscribe((data) => {
+      this.tasks = data.map((e) => {
+        return {
+          id: e.payload.doc.id,
+          ...(e.payload.doc.data() as {}),
+        } as Task;
+      });
     });
   }
 
@@ -37,7 +42,7 @@ export class TasksListComponent implements OnInit {
   }
 
   doEditTask(): void {
-    this.tasksService.editTask(this.task).subscribe(() => {
+    this.tasksService.editTask(this.task).then(() => {
       this.snackBar.open('Task edited', 'X', {
         duration: 3000,
         horizontalPosition: 'center',
@@ -49,7 +54,7 @@ export class TasksListComponent implements OnInit {
 
   doDeleteTask(task: Task): void {
     this.changeSelectedTask(task);
-    this.tasksService.deleteTask(task).subscribe(() => {
+    this.tasksService.deleteTask(task).then(() => {
       this.snackBar.open('Task deleted', 'X', {
         duration: 3000,
         horizontalPosition: 'center',
@@ -57,8 +62,13 @@ export class TasksListComponent implements OnInit {
         panelClass: ['white-snackbar'],
       });
       this.router.navigate(['/tarefas']);
-      this.tasksService.getTasks().subscribe((tasks) => {
-        this.tasks = tasks;
+      this.tasksService.getTasks().subscribe((data) => {
+        this.tasks = data.map((e) => {
+          return {
+            id: e.payload.doc.id,
+            ...(e.payload.doc.data() as {}),
+          } as Task;
+        });
       });
     });
   }

@@ -1,7 +1,9 @@
+import { AuthService } from './../auth.service';
+import { User } from './../user.model';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Task } from '../tasks.model';
-import { HttpClient } from '@angular/common/http';
+import { Task } from '../task.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
@@ -9,29 +11,39 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TasksService {
   tasks: Task[];
-  baseUrl: string = 'http://localhost:3001/tasks';
+  user: User;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private firestore: AngularFirestore,
+    private route: ActivatedRoute,
+    private auth: AuthService
+  ) {}
 
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.baseUrl);
+  addTask(task: Task) {
+    const taskObject = { ...task };
+    return this.firestore.collection('tasks').doc(task.id).set(taskObject);
   }
 
-  getTaskById(id: number): Observable<Task> {
-    return this.http.get<Task>(`${this.baseUrl}/${id}`);
+  getTasks() {
+    this.auth.user$.subscribe((user) => {
+      this.user = user;
+      console.log('asdsadsadas:', this.user);
+    });
+    return this.firestore.collection('tasks').snapshotChanges();
   }
 
-  addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.baseUrl, task);
+  getTaskById(id: string) {
+    return this.firestore
+      .collection('tasks', (ref) => ref.where('id', '==', id))
+      .snapshotChanges();
   }
 
-  editTask(task: Task): Observable<Task> {
-    const customUrl = `${this.baseUrl}/${task.id}`;
-    return this.http.put<Task>(customUrl, task);
+  editTask(task: Task) {
+    const taskObject = { ...task };
+    return this.firestore.doc('tasks/' + task.id).update(taskObject);
   }
 
-  deleteTask(task: Task): Observable<Task> {
-    const customUrl = `${this.baseUrl}/${task.id}`;
-    return this.http.delete<Task>(customUrl);
+  deleteTask(task: Task) {
+    return this.firestore.doc('tasks/' + task.id).delete();
   }
 }
