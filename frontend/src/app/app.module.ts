@@ -31,14 +31,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 var config = {
-  apiKey: 'AIzaSyCAFI2DVBbxvKmL1QizhzrKAuOzuKuFkKs',
-  authDomain: 'tasks-1951e.firebaseapp.com',
-  databaseURL: 'https://tasks-1951e.firebaseio.com',
-  projectId: 'tasks-1951e',
-  storageBucket: 'tasks-1951e.appspot.com',
-  messagingSenderId: '169648077125',
-  appId: '1:169648077125:web:96de555629ee385e41662c',
-  measurementId: 'G-E32BNWTJWD',
+  // Your Firebase settings here... :-)
 };
 
 @NgModule({
